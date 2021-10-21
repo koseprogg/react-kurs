@@ -1,0 +1,17 @@
+h1 {
+  color: blue;
+}
+
+h2 {
+  color: orange;
+}
+
+.header {
+  background-color: red;
+  border: black
+}
+
+.main {
+  background-color: yellow;
+  border: green
+}

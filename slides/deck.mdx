@@ -1,72 +1,94 @@
 import { Image, Notes, Head } from "mdx-deck";
-import { CodeSurferColumns, Step } from "code-surfer";
+import { CodeSurfer, CodeSurferColumns, Step } from "code-surfer";
 import {
   vsDark as classTheme,
   nightOwl as hooksTheme,
+  oceanicNext as oceanicTheme,
 } from "@code-surfer/themes";
 
 import GreetingLoader from "./src/greeting-loader";
+import kurs from "./kurs.png";
 
-export const theme = classTheme;
+
+export const theme = oceanicTheme;
 
 <Head>
-  <title>React</title>
+  <title>Nybegynerkurs i React</title>
 </Head>
 
 ---
 
-<CodeSurferColumns sizes={[1, 2]}>
+# Agenda
 
-<Step subtitle="Here is a simple React component">
+---
 
-<GreetingLoader />
+## Første del
+- Gå kjapt gjennom HTML/CSS/JavaScript
+- Grunnleggende konsepter av React
+- Oppsett av en enkel React-app
+- Lagre tilstand i appen
+- Flere konsepter i React/Javascript
 
-```jsx file=./src/greeting.1.1.js
+---
+
+## Andre del
+- Bruk av pakker i React/NPM
+- Bruk av komponentrammeverk
+- Visualisering med grafer
+- Routing og undersider
+- SinglePageApplication
+
+---
+
+## Tredje del
+- Deploye nettside
+- Eksempler på andre mulige prosjekter
+- Hvordan komme i gang med react
+
+---
+
+<CodeSurferColumns>
+
+<Step title="Vi ser på noe enkel HTML, som er skjellet av alle nettsider">
+
+```html file=./src/index.html
 ```
 
 </Step>
 
-<Step subtitle="we want to make the 'name' editable">
+<Step
+title="Enkelt forklart består HTML av blokker som en åpner med <> og lukker med </>"
+subtitle="Her åpner og lukker vi <html> som alltid er den ytterste blokken">
 
-<GreetingLoader />
-
-```jsx 7 file=./src/greeting.1.1.js
+```html 1,15 file=./src/index.html
 ```
 
 </Step>
 
-<Step subtitle="so we turn the component into a class">
+<Step title="Vi har alltid en head seksjon">
 
-<GreetingLoader version="class.1.1" />
-
-```jsx file=./src/greeting.class.1.1.js
+```html 2,4 file=./src/index.html
 ```
 
 </Step>
 
-<Step subtitle="add some state">
+<Step title="og head sitt innhold">
 
-<GreetingLoader version="class.1.2" />
-
-```jsx file=./src/greeting.class.1.2.js
+```html 3 file=./src/index.html
 ```
 
 </Step>
 
-<Step subtitle="and add a change handler that calls setState">
+<Step title="Videre har vi alltid en body seksjon">
 
-<GreetingLoader version="class.1.3" />
-
-```jsx 10:12,15:17,25 file=./src/greeting.class.1.3.js
+```html 5,14 file=./src/index.html
 ```
 
 </Step>
 
-<Step subtitle="we can now edit the name and it should work">
+<Step title="og body sitt innhold">
 
-<GreetingLoader version="class.1.3" />
-
-```jsx 1:31 file=./src/greeting.class.1.3.js
+```html 6:13 file=./src/index.html
 ```
 
 </Step>
@@ -75,20 +97,24 @@ export const theme = classTheme;
 
 ---
 
-But let's take a step back
+<CodeSurferColumns sizes={[1, 2]}>
 
----
+<Step title="Så med litt css gir vi h1 og h2 litt farge">
 
-<CodeSurferColumns
-  sizes={[1, 2]}
-  themes={[hooksTheme, hooksTheme]}
->
+```html 7,8 file=./src/index2.html
+```
 
-<Step subtitle="what if we didn't have to write a class when we want to use state?">
+```css 1:7 file=./src/style.css
+```
 
-<GreetingLoader theme={hooksTheme} />
+</Step>
 
-```jsx file=./src/greeting.1.1.js
+<Step title="Og gir de to seksjonene våre navn kan vi også gi de litt style">
+
+```html 6,10 file=./src/index2.html
+```
+
+```css 9:17 file=./src/style.css
 ```
 
 </Step>
