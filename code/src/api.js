@@ -5,6 +5,7 @@ const data = [
     from: "Peder",
     timestamp: now,
     text: "Er dere klare?",
+    me: true,
   },
   {
     from: "Ludvig",
@@ -20,6 +21,7 @@ const data = [
     from: "Peder",
     timestamp: Date.now() + 137461,
     text: "Venter fortsatt...",
+    me: true,
   },
   {
     from: "Ludvig",

@@ -5,7 +5,12 @@ import "./App.css";
 
 const App = () => {
   const messages = data.map((msg) => (
-    <Message from={msg.from} timestamp={msg.timestamp} text={msg.text} />
+    <Message
+      from={msg.from}
+      timestamp={msg.timestamp}
+      text={msg.text}
+      me={msg.me}
+    />
   ));
 
   return (
