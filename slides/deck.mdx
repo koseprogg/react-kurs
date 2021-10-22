@@ -12,6 +12,7 @@ import {
 import { highlight } from "@mdx-deck/themes";
 
 import GreetingLoader from "./src/greeting-loader";
+import Layout from "./components/Layout"
 
 export const theme = {
   ...oceanicTheme,
@@ -28,6 +29,8 @@ export const theme = {
 
 ---
 
+<Layout>
+
 ## Første del
 
 - Gå kjapt gjennom HTML/CSS/JavaScript
@@ -36,7 +39,11 @@ export const theme = {
 - Lagre tilstand i appen
 - Flere konsepter i React/JavaScript
 
+</Layout>
+
 ---
+
+<Layout>
 
 ## Andre del
 
@@ -46,13 +53,19 @@ export const theme = {
 - Routing og undersider
 - SinglePageApplication
 
+</Layout>
+
 ---
+
+<Layout>
 
 ## Tredje del
 
 - Deploye nettside
 - Eksempler på andre mulige prosjekter
 - Hvordan komme i gang med react
+
+</Layout>
 
 ---
 
@@ -256,7 +269,18 @@ De aller fleste React apper har denne koden:
 ReactDOM.render(App, document.getElementById("root"));
 ```
 
-Når denne konden kjører vil React bruke kjøre JS funksjoner som genererer og endrer på html dokumentet (DOMen) på siden vår
+Når denne konden kjører vil React bruke kjøre JS funksjoner som genererer og endrer på html dokumentet (DOMen) på siden vår.
+([demo](https://reactjs.org/redirect-to-codepen/rendering-elements/update-rendered-element))
+
+Vi sier at vi _rendrer_ appen vår.
+
+---
+
+Som vi så, så vil ikke hele html dokumentet rendres på nytt hvert tick, men kun det som er endret i
+"React treet" vårt. Det hadde vært utrolig tregt å skrive all html på nytt hver gang det skjedde en
+liten endring, så React er smart, og ender kun det den trenger i html dokumentet.
+
+> Dette gjør den vha. en såkalt virtuell DOM. Det er ikke viktig akkurat hvordan dette fungerer.
 
 ---
 
