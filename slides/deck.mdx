@@ -1,4 +1,4 @@
-import { Image, Notes, Head } from "mdx-deck";
+import { Image, Notes, Head, themes } from "mdx-deck";
 import {
   CodeSurfer,
   CodeSurferColumns,
@@ -9,14 +9,12 @@ import {
   nightOwl as hooksTheme,
   oceanicNext as oceanicTheme,
 } from "@code-surfer/themes";
-import { highlight } from "@mdx-deck/themes";
 
-import Layout from "./components/Layout"
+import Layout, { Splits } from "./components/Layout";
 import AppLoader from "./src/app-loader";
 
 export const theme = {
   ...oceanicTheme,
-  ...highlight,
 };
 
 <Head>
@@ -521,3 +519,104 @@ const App = () => {
 </Step>
 
 </CodeSurferColumns>
+
+---
+
+# State
+
+Vi har nå sett hvordan vi kan dynamisk endre komponenter med bruk av `props`.
+Men, med kun props er det mye vi ikke kan gjøre, som f.eks å endre tilstand basert på brukerinteraksjon.
+En ganske essensiell ting for en moderne nettsie!
+
+Vi skal gå litt gjennom _state handling_ i React.
+
+---
+
+<CodeSurferColumns>
+
+<Step title="Et enkelt eksempel: Counter" subtitle="Denne komponenten kan endre seg når vi trykker på knapper!">
+
+```jsx file=./src/App.counter.js
+
+```
+
+<AppLoader version="counter" />
+
+</Step>
+
+</CodeSurferColumns>
+
+---
+
+<CodeSurfer>
+
+```jsx file=./src/App.counter.js title="La oss ta en nærmere titt hvordan dette fungerer"
+
+```
+
+```diff 1[14:40] subtitle="Først importerer vi useState "hooken" fra React"
+
+```
+
+```diff 4 subtitle="For å lage en state variabel kaller vi useState funksjonen inne i komponenten vår med en default verdi (her 0)"
+
+```
+
+```diff 4[2:26] subtitle="Her bruker vi 'array destructuring' for å definere to variabler som useState lager. Den første er selve staten, og den andre er en funksjon som setter staten vår"
+
+```
+
+```diff 7 subtitle="Nå kan vi bruke count staten vår som en variabel. Akkurat som med props"
+
+```
+
+```diff 8 subtitle="Men, nå har vi en variabel verdi som vi kan endre på! Vi bruker setCount funksjonen til å inkrementere count"
+
+```
+
+</CodeSurfer>
+
+---
+
+<CodeSurferColumns>
+
+<Step title="Vi er ikke limeted til å ha bare en state. Vi kan kalle useState så mange ganger vi vil og lage flere states som holder styr på hver sin verdi">
+
+```jsx file=./src/App.counter.2.js
+
+```
+
+<AppLoader version="counter.2" />
+
+</Step>
+
+</CodeSurferColumns>
+
+---
+
+<Layout>
+
+<Splits splits={[2, 1]} style={{alignItems: 'initial'}}>
+
+<div style={{textAlign: 'left', fontSize:"0.8em"}}>
+
+## Oppgavetid! (10 min)
+
+Vi vil kunne skrive inn et navn i chat appen vår, så de vi snakker med vet hvem du er.
+
+Prøv å lage et input felt og en state som setter navnet ditt i appen når du skriver inn et navn.
+
+Tips: Du kan bruke `onInput` attributten på `<input>` elementet. Denne attributten forventer en
+funksjon som tar enn en verdi, `event`. For tekstfelt kan du hente ut verdien med
+`event.target.value`:
+
+```jsx
+<input onInput={(e) => someFunction(e.target.value)} />
+```
+
+</div>
+
+<AppLoader version="2.0" />
+
+</Splits>
+</Layout>
