@@ -1,14 +1,22 @@
 import { Image, Notes, Head } from "mdx-deck";
-import { CodeSurfer, CodeSurferColumns, Step } from "code-surfer";
 import {
-vsDark as classTheme,
-nightOwl as hooksTheme,
-oceanicNext as oceanicTheme,
+  CodeSurfer,
+  CodeSurferColumns,
+  Step,
+} from "code-surfer";
+import {
+  vsDark as classTheme,
+  nightOwl as hooksTheme,
+  oceanicNext as oceanicTheme,
 } from "@code-surfer/themes";
+import { highlight } from "@mdx-deck/themes";
 
 import GreetingLoader from "./src/greeting-loader";
 
-export const theme = oceanicTheme;
+export const theme = {
+  ...oceanicTheme,
+  ...highlight,
+};
 
 <Head>
   <title>Nybegynerkurs i React</title>
@@ -23,7 +31,7 @@ export const theme = oceanicTheme;
 ## Første del
 
 - Gå kjapt gjennom HTML/CSS/JavaScript
-- Grunnleggende konsepter av React
+- Grunnleggende konsepter i React
 - Oppsett av en enkel React-app
 - Lagre tilstand i appen
 - Flere konsepter i React/Javascript
@@ -53,15 +61,25 @@ export const theme = oceanicTheme;
 <Step title="Vi ser på noe enkel HTML, som er skjellet av alle nettsider">
 
 ```html file=./src/index.html
+
 ```
 
+HTML er representert i en tre-struktur, her ser vi at `<html>` er det øverste elementet i
+_dokument-treet_. `<html>` har `<head>` og `<body>` som barn.
+
 </Step>
+</CodeSurferColumns>
+
+---
+
+<CodeSurferColumns>
 
 <Step
 title="Enkelt forklart består HTML av blokker som en åpner med <> og lukker med </>"
 subtitle="Her åpner og lukker vi <html> som alltid er den ytterste blokken">
 
 ```html 1,15 file=./src/index.html
+
 ```
 
 </Step>
@@ -69,6 +87,7 @@ subtitle="Her åpner og lukker vi <html> som alltid er den ytterste blokken">
 <Step title="Vi har alltid en head seksjon">
 
 ```html 2,4 file=./src/index.html
+
 ```
 
 </Step>
@@ -76,6 +95,7 @@ subtitle="Her åpner og lukker vi <html> som alltid er den ytterste blokken">
 <Step title="og head sitt innhold">
 
 ```html 3 file=./src/index.html
+
 ```
 
 </Step>
@@ -83,6 +103,7 @@ subtitle="Her åpner og lukker vi <html> som alltid er den ytterste blokken">
 <Step title="Videre har vi alltid en body seksjon">
 
 ```html 5,14 file=./src/index.html
+
 ```
 
 </Step>
@@ -90,6 +111,7 @@ subtitle="Her åpner og lukker vi <html> som alltid er den ytterste blokken">
 <Step title="og body sitt innhold">
 
 ```html 6:13 file=./src/index.html
+
 ```
 
 </Step>
@@ -103,9 +125,11 @@ subtitle="Her åpner og lukker vi <html> som alltid er den ytterste blokken">
 <Step title="Så med litt css gir vi h1 og h2 litt farge">
 
 ```html 7,8 file=./src/index2.html
+
 ```
 
 ```css 1:7 file=./src/style.css
+
 ```
 
 </Step>
@@ -113,11 +137,92 @@ subtitle="Her åpner og lukker vi <html> som alltid er den ytterste blokken">
 <Step title="Og gir de to seksjonene våre navn kan vi også gi de litt style">
 
 ```html 6,10 file=./src/index2.html
+
 ```
 
 ```css 9:17 file=./src/style.css
+
 ```
 
 </Step>
 
 </CodeSurferColumns>
+
+---
+
+## Så, hvordan er dette relatert til React?
+
+---
+
+React er er javaScript bibliotek for å lage brukergrensesnitt, hovedsakelig med HTML.
+
+Med React skriver vi ikke vanlig javaScript, men et
+superset som heter **JSX**. Dette ser ut som en blanding
+av html og javaScript.
+
+```jsx
+ReactDOM.render(
+  <HelloMessage name="Taylor" />,
+  document.getElementById("hello-example")
+);
+```
+
+---
+
+<CodeSurferColumns>
+<Step title="En eksempel på JSX" subtitle="Men nettleseren skjønner ikke jsx, bare vanlig HTML og
+javaScript">
+
+```jsx
+return (
+  <div className="shopping-list">
+    <h1>Shopping List for {this.props.name}</h1>
+    <ul>
+      <li>Instagram</li>
+      <li>WhatsApp</li>
+      <li>Oculus</li>
+    </ul>
+  </div>
+);
+```
+
+```js
+.
+```
+
+</Step>
+<Step subtitle="JSX koden blir til vanlig javaScript som kjøres i nettleseren!">
+
+```jsx
+return (
+  <div className="shopping-list">
+    <h1>Shopping List for {this.props.name}</h1>
+    <ul>
+      <li>Instagram</li>
+      <li>WhatsApp</li>
+      <li>Oculus</li>
+    </ul>
+  </div>
+);
+```
+
+```js
+return React.createElement(
+  "div",
+  { className: "shopping-list" },
+  React.createElement("h1" /* ... h1 children ... */),
+  React.createElement("ul" /* ... ul children ... */)
+);
+```
+
+</Step>
+
+</CodeSurferColumns>
+
+---
+
+Men, vi har fortsatt bare javaScript, og ikke noe HTML.
+
+---
+
+
