@@ -1,0 +1,57 @@
+.chat {
+  background: #fff;
+  width: 300px;
+  padding: 10px 30px;
+  border-radius: 30px;
+}
+
+.message {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+
+.message-right {
+  align-items: end;
+}
+
+.from {
+  font-size: 12px;
+  color: darkgray;
+}
+
+.from-left {
+  margin-left: 15px;
+}
+
+.from-right {
+  margin-right: 15px;
+}
+
+.text {
+  font-size: 18px;
+  padding: 10px 20px;
+}
+
+.text-right {
+  background: #1186fe;
+  color: #fff;
+  border-radius: 20px 20px 0 20px;
+}
+
+.text-left {
+  background: #e9e9eb;
+  color: #000;
+  border-radius: 20px 20px 20px 0;
+}
+
+.timestamp {
+  font-size: 12px;
+  color: darkgray;
+}
+
+/* TEMP */
+.header {
+  color: black;
+  font-size: 30px;
+}

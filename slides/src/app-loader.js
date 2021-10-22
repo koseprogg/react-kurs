@@ -2,14 +2,10 @@ import React from "react";
 
 import { useThemeUI } from "theme-ui";
 
-const load = require.context("./", true, /greeting\..*js$/);
+const load = require.context("./", true, /App\..*js$/);
 
-export default function GreetingLoader({
-  version = "1.1",
-  theme,
-}) {
-  const Greeting = load("./greeting." + version + ".js")
-    .default;
+export default function Loader({ version = "1.1", theme }) {
+  const App = load("./App." + version + ".js").default;
 
   const { themeUi } = useThemeUI();
 
@@ -31,7 +27,7 @@ export default function GreetingLoader({
           t && t.styles.CodeSurfer.code.backgroundColor,
       }}
     >
-      <Greeting name="Mary" />
+      <App />
     </div>
   );
 }

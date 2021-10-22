@@ -13,6 +13,7 @@ import { highlight } from "@mdx-deck/themes";
 
 import GreetingLoader from "./src/greeting-loader";
 import Layout from "./components/Layout"
+import AppLoader from "./src/app-loader";
 
 export const theme = {
   ...oceanicTheme,
@@ -327,3 +328,197 @@ const App = () => {
 </CodeSurfer>
 
 ---
+
+<CodeSurferColumns>
+
+<Step title="La oss begynne å lage en liten app som viser litt eksempler">
+
+```jsx 1:14 file=./src/App.1.1.js
+
+```
+
+<AppLoader />
+
+</Step>
+
+<Step title="Importerer vi React, samt litt `CSS` koden så eksempelet blir litt fint">
+
+```jsx 1,2 file=./src/App.1.1.js
+
+```
+
+<AppLoader />
+
+</Step>
+
+<Step title="Så definerer vi en funksjon som retunerer JSX">
+
+```jsx 4:12 file=./src/App.1.1.js
+
+```
+
+<AppLoader />
+
+</Step>
+
+<Step subtitle="...og dette lager komponenten vi ser på siden">
+
+```jsx file=./src/App.1.1.js
+
+```
+
+<AppLoader version="1.1" />
+
+</Step>
+
+<Step title="Men så trenger vi noen `chats` i dette chatterommet da">
+
+```jsx file=./src/App.1.2.js
+
+```
+
+<AppLoader version="1.2" />
+
+</Step>
+
+<Step title="også trenger vi et svar fra Ludvig">
+
+```jsx file=./src/App.1.3.js
+
+```
+
+<AppLoader version="1.3" />
+
+</Step>
+
+<Step title="og Magnus">
+
+```jsx file=./src/App.1.4.js
+
+```
+
+<AppLoader version="1.4" />
+
+</Step>
+
+<Step title="og kanskje jeg svarer igjen?">
+
+```jsx file=./src/App.1.5.js
+
+```
+
+<AppLoader version="1.5" />
+
+</Step>
+
+<Step title="Men hva synes vi egentlig om dette?" subtitle="Er dette god og gjennbrukbar kode?">
+
+```jsx file=./src/App.1.5.js
+
+```
+
+<AppLoader version="1.5" />
+
+</Step>
+
+<Step title="Kanskje dette kunne vært en komponent, så vi kan bruke headern vår flere ganger?">
+
+```jsx 7:9 file=./src/App.1.5.js
+
+```
+
+<AppLoader version="1.5" />
+
+</Step>
+
+<Step title="Og hva med dette? Dette ser ut som noe som burde vært en loop fra ITGK?">
+
+```jsx 10:29 file=./src/App.1.5.js
+
+```
+
+<AppLoader version="1.5" />
+
+</Step>
+
+<Step title="Så la oss lage en kompoent av headern">
+
+```jsx file=./src/App.1.6.js
+
+```
+
+<AppLoader version="1.6" />
+
+</Step>
+
+<Step title="og vi setter inn <Header /> komponenten vår">
+
+```jsx file=./src/App.1.7.js
+
+```
+
+<AppLoader version="1.7" />
+
+</Step>
+
+<Step title="Men før vi ser på meldigene, la oss see litt nærmere på dette her!">
+
+```jsx 4:10,15 file=./src/App.1.7.js
+
+```
+
+<AppLoader version="1.7" />
+
+</Step>
+
+<Step title="Så la oss glemme meldinger litt, og bare fokusere på <Header />">
+
+```jsx file=./src/App.1.8.js
+
+```
+
+<AppLoader version="1.8" />
+
+</Step>
+
+<Step title="Hvis vi skal bruke denne <Header /> kompoenenten overalt så vil vi kanskje at den skal være dynamisk?" subtitle="Vi vil kanskje at denne teksten sier noe annet per side?">
+
+```jsx 7 file=./src/App.1.8.js
+
+```
+
+<AppLoader version="1.8" />
+
+</Step>
+
+<Step title="Da må vi huske tilbake til i stad da vi snakket om props">
+
+```jsx file=./src/App.1.9.js
+
+```
+
+<AppLoader version="1.9" />
+
+</Step>
+
+<Step title="Sender inn teksten til komponenten litt som en funksjon">
+
+```jsx file=./src/App.1.10.js
+
+```
+
+<AppLoader version="1.10" />
+
+</Step>
+
+<Step title="Og vi kan enkelt lage mange headers, hvis vi vil dette da :)">
+
+```jsx file=./src/App.1.11.js
+
+```
+
+<AppLoader version="1.11" />
+
+</Step>
+
+</CodeSurferColumns>
