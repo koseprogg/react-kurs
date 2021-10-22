@@ -1,0 +1,23 @@
+
+.chat {
+  background: grey;
+}
+
+.message {
+  display: flex;
+  flex-direction: column;
+}
+
+.from {
+  font-size: 10px;
+}
+
+.text {
+  font-size: 12px;
+  background: green;
+  padding: 10px 20px;
+}
+
+.timestamp {
+  font-size: 10px;
+}
