@@ -34,7 +34,7 @@ export const theme = {
 - Grunnleggende konsepter i React
 - Oppsett av en enkel React-app
 - Lagre tilstand i appen
-- Flere konsepter i React/Javascript
+- Flere konsepter i React/JavaScript
 
 ---
 
@@ -154,11 +154,11 @@ subtitle="Her åpner og lukker vi <html> som alltid er den ytterste blokken">
 
 ---
 
-React er er javaScript bibliotek for å lage brukergrensesnitt, hovedsakelig med HTML.
+React er er JavaScript bibliotek for å lage brukergrensesnitt, hovedsakelig med HTML.
 
-Med React skriver vi ikke vanlig javaScript, men et
+Med React skriver vi ikke vanlig JavaScript, men et
 superset som heter **JSX**. Dette ser ut som en blanding
-av html og javaScript.
+av html og JavaScript.
 
 ```jsx
 ReactDOM.render(
@@ -171,12 +171,12 @@ ReactDOM.render(
 
 <CodeSurferColumns>
 <Step title="En eksempel på JSX" subtitle="Men nettleseren skjønner ikke jsx, bare vanlig HTML og
-javaScript">
+JavaScript">
 
 ```jsx
 return (
   <div className="shopping-list">
-    <h1>Shopping List for {this.props.name}</h1>
+    <h1>Shopping List for {props.name}</h1>
     <ul>
       <li>Instagram</li>
       <li>WhatsApp</li>
@@ -191,12 +191,12 @@ return (
 ```
 
 </Step>
-<Step subtitle="JSX koden blir til vanlig javaScript som kjøres i nettleseren!">
+<Step subtitle="JSX koden blir til vanlig JavaScript som kjøres i nettleseren!">
 
 ```jsx
 return (
   <div className="shopping-list">
-    <h1>Shopping List for {this.props.name}</h1>
+    <h1>Shopping List for {props.name}</h1>
     <ul>
       <li>Instagram</li>
       <li>WhatsApp</li>
@@ -221,8 +221,85 @@ return React.createElement(
 
 ---
 
-Men, vi har fortsatt bare javaScript, og ikke noe HTML.
+<CodeSurferColumns>
+<Step>
+
+```jsx
+const element = <div tabIndex="0"></div>;
+```
+
+Med JSX kan vi skrive _JSX tags_ inne i JS koden vår. Det kan være html elementer, eller
+React komponenter (som vi kommer tibake til).
+
+</Step>
+
+<Step>
+
+```jsx
+const element = <img src={user.avatarUrl}></img>;
+```
+
+Inne i jsx kode kan vi også skrive vanlig JS ved å sette det inni curly brackets.
+
+</Step>
+</CodeSurferColumns>
 
 ---
 
+Men, vi har fortsatt bare JS, og ikke noe HTML!
 
+---
+
+De aller fleste React apper har denne koden:
+
+```js
+ReactDOM.render(App, document.getElementById("root"));
+```
+
+Når denne konden kjører vil React bruke kjøre JS funksjoner som genererer og endrer på html dokumentet (DOMen) på siden vår
+
+---
+
+## Komponenter
+
+Det mest sentrale konseptet i React (og de fleste UI rammeverk). Komponenter lar oss dele opp Appen
+vår i små, gjenbrukbare deler.
+
+---
+
+<CodeSurfer>
+
+```jsx title="Et enkelt eksempel på en komponent" subtitle="Den enkleste komponenten er bare en funksjon"
+function Welcome(props) {
+  return <h1>Hello, {props.name}</h1>;
+}
+```
+
+```jsx title="Et enkelt eksempel på en komponent"  subtitle="Kan også skrives i ES6 syntax (anbefalt)"
+function Welcome(props) {
+  return <h1>Hello, {props.name}</h1>;
+}
+
+const Welcome = (props) => {
+  return <h1>Hello, {props.name}</h1>;
+};
+```
+
+```jsx subtitle="Nå kan vi bruke Welcome komponenten vår hvor som helst!"
+const App = () => {
+  return (
+    <div>
+      <Welcome name="Peder">
+      <Welcome name="Magnus">
+    </div>
+  );
+}
+```
+
+```diff 3,4 subtitle="Legg merke til at inebygde komponenter skrives som vanilg HTML, mens React komponenter defineres med stor forbokstav"
+
+```
+
+</CodeSurfer>
+
+---
