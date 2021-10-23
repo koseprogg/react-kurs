@@ -585,9 +585,25 @@ const App = () => {
 
 ## Oppgavetid! (10 min)
 
-Hvordan kan vi lage en Message komponent vi kan bruke flere ganger, sånn at vi ikke gjenntar oss så mange ganger?
+Lag en Message komponent vi kan bruke flere ganger, sånn at vi ikke gjenntar oss så mange ganger?
 
-Hent koden fra Github
+Start oppgaven med:
+
+```
+$ git reset --hard origin/start
+```
+
+Se på filstrukturen. Naturlig å begynne å lage en komponent i en fil Message.js
+
+```bash
+├── src
+│  ├── App.css
+│  ├── App.js // Her er filen vi har skrevet alt i
+│  ├── components
+│  │  └── Header.js // Her ligger header komponenten vi lagde
+│  ├── index.css
+│  └── index.js
+```
 
 </div>
 
@@ -597,7 +613,7 @@ Hent koden fra Github
 
 <CodeSurferColumns>
 
-<Step title="La oss se gjennom hvordan dette kan gjøres">
+<Step title="Fasit!">
 
 ```jsx file=./src/App.1.13.js
 
@@ -796,6 +812,129 @@ Hent koden fra Github
 </Step>
 
 </CodeSurferColumns>
+
+---
+
+<Layout noColor smol>
+
+# Loops?
+
+Nytt konsept. Jeg sa for en stund siden at det hadde vært nice med en Loop, så vi slipper å skrive duplikat kode.
+
+Dette er her hvor en blanding av JavaScript og HTML skinner.
+
+```jsx
+const liste = ["Peder", "Ludvig", "Magnus", "Tiril"];
+
+const komponenter = liste.map((element) => {
+  return <h1>element</h1>;
+});
+```
+
+</Layout>
+
+---
+
+<CodeSurferColumns>
+
+<Step title="La oss se på et eksempel vi er litt mer kjent med">
+
+```jsx file=./src/App.1.11.js
+
+```
+
+<AppLoader version="1.11" />
+
+</Step>
+
+<Step title="Dette kan fort bli litt teit, er dere ikke enig?">
+
+```jsx file=./src/App.1.47.js
+
+```
+
+<AppLoader version="1.47" />
+
+</Step>
+
+<Step title="Så vi lager en liste for å holde variabelene våre">
+
+```jsx file=./src/App.1.48.js
+
+```
+
+<AppLoader version="1.48" />
+
+</Step>
+
+<Step title="Og lager en slik .map som retunerer en <Header /> for hvert element i listen.">
+
+```jsx file=./src/App.1.49.js
+
+```
+
+<AppLoader version="1.49" />
+
+</Step>
+
+<Step title="Til slutt bruker vi den slik">
+
+```jsx file=./src/App.1.50.js
+
+```
+
+<AppLoader version="1.50" />
+
+</Step>
+
+<Step title="Og se hvor mye lettere det å legge til flere ting da.">
+
+```jsx file=./src/App.1.51.js
+
+```
+
+<AppLoader version="1.51" />
+
+</Step>
+
+<Step title="Dette gjør det mye lettere å lage dynamiske nettsider som har varierende innhold">
+
+```jsx file=./src/App.1.51.js
+
+```
+
+<AppLoader version="1.51" />
+
+</Step>
+
+</CodeSurferColumns>
+
+---
+
+<Layout>
+
+<div style={{textAlign: 'left', fontSize:"0.8em"}}>
+
+## Oppgavetid! (10 min)
+
+Lag en "loop" som henter data fra api.js og rendrer en Message per melding.
+
+Start oppgaven med:
+
+```bash
+$ git reset --hard origin/steg-1
+```
+
+Hvis dere ser i App.js nå så er allerede data importert fra api.js filen.
+Hvordan kan dere bruke denne `
+
+```jsx
+import data from "./api";
+```
+
+</div>
+
+</Layout>
 
 ---
 
