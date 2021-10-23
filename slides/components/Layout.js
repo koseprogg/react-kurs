@@ -24,7 +24,6 @@ export const Splits = ({ splits, ...props }) => {
         display: "flex",
         alignItems: "center",
         height: "100%",
-        textAlign: "center",
         ...props.style,
       }}
     >

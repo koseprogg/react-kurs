@@ -7,7 +7,7 @@ const App = () => {
       <h1 className="header">
         Chatroom
       </h1>
-      <div className={"message message-right"}>
+      <div className="message message-right">
         <span className="from">Peder</span>
         <span className="text text-right">Er dere klare?</span>
         <span className="timestamp">17:14:12</span>

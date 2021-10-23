@@ -1,20 +1,12 @@
 import React from "react";
+import Header from "./components/Header";
+import Message from "./components/Message";
 import "./App.css";
-
-const Header = () => {
-  return (
-    <h1 className="header">
-      Chatroom
-    </h1>
-  )
-}
 
 const App = () => {
   return (
     <div className="chat">
-      <h1 className="header">
-        Chatroom
-      </h1>
+      <Header text="Chatroom" />
       <div className="message message-right">
         <span className="from">Peder</span>
         <span className="text text-right">Er dere klare?</span>

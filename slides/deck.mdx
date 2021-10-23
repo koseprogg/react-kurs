@@ -297,18 +297,26 @@ Vi sier at vi _rendrer_ appen vår.
 
 ---
 
+<Layout noColor smol>
+
 Som vi så, så vil ikke hele HTML dokumentet rendres på nytt hvert tick, men kun det som er endret i
 "React treet" vårt. Det hadde vært utrolig tregt å skrive all HTML på nytt hver gang det skjedde en
 liten endring, så React er smart, og ender kun det den trenger i html dokumentet.
 
 > Dette gjør den vha. en såkalt virtuell DOM. Det er ikke viktig akkurat hvordan dette fungerer.
 
+</Layout>
+
 ---
+
+<Layout noColor smol>
 
 ## Komponenter
 
 Det mest sentrale konseptet i React (og de fleste UI rammeverk). Komponenter lar oss dele opp Appen
 vår i små, gjenbrukbare deler.
+
+</Layout>
 
 ---
 
@@ -361,7 +369,7 @@ const App = () => {
 
 </Step>
 
-<Step title="Importerer vi React, samt litt `CSS` koden så eksempelet blir litt fint">
+<Step title="Vi må importere React for å bruke JSX, samt litt `CSS` så eksempelet blir litt fint">
 
 ```jsx 1,2 file=./src/App.1.1.js
 
@@ -557,7 +565,7 @@ const App = () => {
 
 </Step>
 
-<Step title="Med en gang vi ser at vi gjenntar den samme koden, og alt vi endrer er noen variabler, så burde vi med en gang tenke Komponent">
+<Step title="Med en gang vi ser at vi gjenntar den samme koden, og alt vi endrer er noen variabler, så burde vi med en gang tenke <Komponent />">
 
 ```jsx 17:19,22:24,27:29,32:34 file=./src/App.1.12.js
 
@@ -575,11 +583,11 @@ const App = () => {
 
 <div style={{textAlign: 'left', fontSize:"0.8em"}}>
 
-## Oppgavetid! (5 min)
+## Oppgavetid! (10 min)
 
-Hvordan kan vi lage en Message kompoent vi kan bruke flere ganger, sånn at vi ikke gjenntar oss så mange ganger?
+Hvordan kan vi lage en Message komponent vi kan bruke flere ganger, sånn at vi ikke gjenntar oss så mange ganger?
 
-Hent koden som ligger i master på GitHub TODO
+Hent koden fra Github
 
 </div>
 
@@ -595,7 +603,195 @@ Hent koden som ligger i master på GitHub TODO
 
 ```
 
+</Step>
+
+</CodeSurferColumns>
+
+---
+
+<CodeSurferColumns>
+
+<Step title="Okey, så vi begynner med å lage en tom Message komponent">
+
+```jsx file=./src/App.1.14.js
+
+```
+
+</Step>
+
+<Step title="Så kopierer vi inn meldingskoden fra i sted">
+
+```jsx file=./src/App.1.15.js
+
+```
+
+</Step>
+
+<Step title="Videre så vil vi gjøre at komponenten faktisk er dynamisk, så å ta inn props">
+
+```jsx file=./src/App.1.16.js
+
+```
+
+</Step>
+
+<Step title="Også bruker vi props ved å gjøre som dette">
+
+```jsx file=./src/App.1.17.js
+
+```
+
+</Step>
+
+</CodeSurferColumns>
+
+---
+
+<CodeSurferColumns>
+
+<Step title="La oss prøve å ta i bruk komponenten vår">
+
+```jsx file=./src/App.1.13.js
+
+```
+
+```jsx file=./src/App.1.17.js
+
+```
+
+</Step>
+
+<Step title="La oss prøve å ta i bruk komponenten vår">
+
+```jsx file=./src/App.1.18.js
+
+```
+
+```jsx file=./src/App.1.17.js
+
+```
+
+</Step>
+
+<Step title="Også må vi se på følgende linjer">
+
+```jsx 10:29 file=./src/App.1.18.js
+
+```
+
+```jsx file=./src/App.1.17.js
+
+```
+
+</Step>
+
+<Step title="Her må vi bruke komponenten vår" subtitle="Men det er kanskje noen som ser hva som ikke funker her?">
+
+```jsx file=./src/App.1.19.js
+
+```
+
+```jsx file=./src/App.1.17.js
+
+```
+
+</Step>
+
+</CodeSurferColumns>
+
+---
+
+<CodeSurferColumns>
+
+<Step title="Sånn her vil den se ut nå. Dette var ikke helt slik vi planla!" subtitle="Hvorfor skjer dette?">
+
+```jsx file=./src/App.1.19.js
+
+```
+
+<AppLoader version="1.19" />
+
+</Step>
+
+<Step title="Hvis vi husker tilbake, når vi skrev alt ut, så passet vi på når {Peder} skrev så var det en annen css klasse som ble brukt." subtitle="Så her må vi finne på noe smart.">
+
+```jsx file=./src/App.1.13.js
+
+```
+
 <AppLoader version="1.13" />
+
+</Step>
+
+<Step title="Hvis vi husker tilbake, når vi skrev alt ut, så passet vi på når {Peder} skrev så var det en annen css klasse som ble brukt." subtitle="Så her må vi finne på noe smart.">
+
+```jsx 9,11,14,16 file=./src/App.1.13.js
+
+```
+
+<AppLoader version="1.13" />
+
+</Step>
+
+</CodeSurferColumns>
+
+---
+
+<CodeSurferColumns sizes={[1, 2]}>
+
+<Step title="La oss gå tilbake til så vi kan se begge komponentene" subtitle="Er det noen som har kommet opp med en løsning for dette?">
+
+```jsx file=./src/App.1.19.js
+
+```
+
+```jsx file=./src/App.1.17.js
+
+```
+
+</Step>
+
+<Step title="En veldig enkel måte å fikse dette på er ved å sende inn en egen prop på de meldigene som er mine">
+
+```jsx file=./src/App.1.20.js
+
+```
+
+```jsx file=./src/App.1.17.js
+
+```
+
+</Step>
+
+<Step title="En veldig enkel måte å fikse dette på er ved å sende inn en egen prop på de meldigene som er mine" subtitle="Og vi kan bruke det på denne måten.">
+
+```jsx file=./src/App.1.20.js
+
+```
+
+```jsx file=./src/App.1.21.js
+
+```
+
+</Step>
+
+</CodeSurferColumns>
+
+---
+
+<CodeSurferColumns>
+
+<Step title="En veldig enkel måte å fikse dette på er ved å sende inn en egen prop på de meldigene som er mine" subtitle="Og vi kan bruke det på denne måten.">
+
+```jsx file=./src/App.1.20.js
+
+```
+
+```jsx file=./src/App.1.21.js
+
+```
+
+<AppLoader version="1.20" />
 
 </Step>
 
@@ -643,23 +839,23 @@ Vi skal gå litt gjennom _state handling_ i React.
 
 ```
 
-```diff 1[14:40] title="En hook er funksjon som opererer på React state og 'lifecycle' metoder. Disse funksjonene kan kun brukes inne i funksjonelle komponenter"
+```diff 1[14:40] title="En hook er en spesiell funksjon som knytter seg til komponenten. Disse funksjonene kan kun brukes inne i funksjonelle komponenter".
 
 ```
 
-```diff 4 subtitle="For å lage en state variabel kaller vi useState funksjonen inne i komponenten vår med en default verdi (her 0)"
+```diff 5 subtitle="For å lage en state variabel kaller vi useState funksjonen inne i komponenten vår med en default verdi (her 0)"
 
 ```
 
-```diff 4[8:26] subtitle="Her bruker vi 'array destructuring' for å definere to variabler som useState lager. Den første er selve staten, og den andre er en funksjon som setter staten vår"
+```diff 5[8:26] subtitle="Her bruker vi 'array destructuring' for å definere to variabler som useState lager. Den første er selve staten, og den andre er en funksjon som setter staten vår"
 
 ```
 
-```diff 7 subtitle="Nå kan vi bruke count staten vår som en variabel. Akkurat som med props"
+```diff 8 subtitle="Nå kan vi bruke count staten vår som en variabel. Akkurat som med props"
 
 ```
 
-```diff 8 subtitle="Men, nå har vi en variabel verdi som vi kan endre på! Vi bruker setCount funksjonen til å inkrementere count"
+```diff 9 subtitle="Men, nå har vi en variabel verdi som vi kan endre på! Vi bruker setCount funksjonen til å inkrementere count"
 
 ```
 
