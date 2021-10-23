@@ -5,6 +5,12 @@
   border-radius: 30px;
 }
 
+.messages {
+  max-height: 500px;
+  overflow-y: scroll;
+  scroll-start: ;
+}
+
 .message {
   display: flex;
   flex-direction: column;
@@ -70,4 +76,19 @@ input {
   font-size: 30px;
   max-width: 200px;
   margin: 10px;
+}
+
+.inputButton {
+  box-sizing: content-box;
+}
+
+.chat input {
+  font-size: 18px;
+  max-width: 160px;
+}
+
+.chat button {
+  font-size: 16px;
+  padding: 0px;
+  margin: 0;
 }
