@@ -522,6 +522,64 @@ const App = () => {
 
 ---
 
+<CodeSurferColumns>
+
+<Step title="Så var det tilbake til disse meldingene våre da" subtitle="Her ser det veldig ut som vi burde hatt en <Message /> komponent.">
+
+```jsx file=./src/App.1.12.js
+
+```
+
+<AppLoader version="1.12" />
+
+</Step>
+
+<Step title="Med en gang vi ser at vi gjenntar den samme koden, og alt vi endrer er noen variabler, så burde vi med en gang tenke Komponent">
+
+```jsx 17:19,22:24,27:29,32:34 file=./src/App.1.12.js
+
+```
+
+<AppLoader version="1.12" />
+
+</Step>
+
+</CodeSurferColumns>
+
+---
+
+<Layout>
+
+<div style={{textAlign: 'left', fontSize:"0.8em"}}>
+
+## Oppgavetid! (5 min)
+
+Hvordan kan vi lage en Message kompoent vi kan bruke flere ganger, sånn at vi ikke gjenntar oss så mange ganger?
+
+Hent koden som ligger i master på GitHub TODO
+
+</div>
+
+</Layout>
+
+---
+
+<CodeSurferColumns>
+
+<Step title="La oss se gjennom hvordan dette kan gjøres">
+
+```jsx file=./src/App.1.13.js
+
+```
+
+<AppLoader version="1.13" />
+
+</Step>
+
+</CodeSurferColumns>
+
+---
+
 # State
 
 Vi har nå sett hvordan vi kan dynamisk endre komponenter med bruk av `props`.
