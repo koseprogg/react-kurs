@@ -11,11 +11,17 @@ import {
 } from "@code-surfer/themes";
 
 import Layout, { Splits } from "./components/Layout";
+import CodeBlock from "./components/CodeBlock";
 import AppLoader from "./src/app-loader";
 
 export const theme = {
   ...oceanicTheme,
   ...themes.prism,
+  ...{
+    components: {
+      code: (props) => <CodeBlock {...props} />,
+    },
+  },
 };
 
 <Head>
@@ -274,9 +280,11 @@ Men, vi har fortsatt bare JS, og ikke noe HTML!
 
 ---
 
+<Layout noColor smol>
+
 De aller fleste React apper har denne koden:
 
-```js
+```jsx
 ReactDOM.render(App, document.getElementById("root"));
 ```
 
@@ -284,6 +292,8 @@ Når denne koden kjører vil React bruke JS funksjoner til å generere og endre 
 ([demo](https://reactjs.org/redirect-to-codepen/rendering-elements/update-rendered-element))
 
 Vi sier at vi _rendrer_ appen vår.
+
+</Layout>
 
 ---
 
@@ -593,6 +603,8 @@ Hent koden som ligger i master på GitHub TODO
 
 ---
 
+<Layout noColor smol>
+
 # State
 
 Vi har nå sett hvordan vi kan dynamisk endre komponenter med bruk av `props`.
@@ -600,6 +612,8 @@ Men, med kun props er det mye vi ikke kan gjøre, som f.eks å endre tilstand ba
 En ganske essensiell ting for en moderne nettsie!
 
 Vi skal gå litt gjennom _state handling_ i React.
+
+</Layout>
 
 ---
 
@@ -803,7 +817,7 @@ inn et navn._
 
 Start oppgaven med:
 
-```
+```bash
 $ git reset --hard origin/step4
 ```
 

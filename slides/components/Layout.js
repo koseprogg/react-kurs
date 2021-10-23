@@ -1,12 +1,13 @@
 import React from "react";
 
-export default ({ children }) => (
+export default ({ children, noColor, smol }) => (
   <div
     style={{
       width: "100vw",
       height: "100vw",
-      backgroundColor: "tomato",
+      backgroundColor: noColor ? "inherit" : "tomato",
       padding: "4rem",
+      maxWidth: smol ? "100rem" : "initial",
     }}
   >
     {children}
