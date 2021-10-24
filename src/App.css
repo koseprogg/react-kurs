@@ -1,3 +1,12 @@
+.nav {
+  background: #ccc;
+  width: 300px;
+  padding: 10px 30px;
+  border-radius: 30px;
+  display: flex;
+  justify-content: space-between;
+}
+
 .chat {
   background: #fff;
   width: 300px;
