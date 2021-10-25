@@ -19,9 +19,14 @@ const App = () => {
     "etc..."
   ];
 
-  const headers = list.map((elem) => {
-    return <Header text={elem} />
-  })
+  // const headers = list.map((elem) => {
+  //   return <Header text={elem} />
+  // })
+
+  let headers = [];
+  for(const elem of list) {
+    headers.push(<Header text={elem} />)
+  }
 
   return (
     <div className="chat">

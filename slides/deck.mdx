@@ -28,49 +28,7 @@ export const theme = {
   <title>Nybegynerkurs i React</title>
 </Head>
 
----
-
-# Agenda
-
----
-
-<Layout>
-
-## Første del
-
-- Gå kjapt gjennom HTML/CSS/JavaScript
-- Grunnleggende konsepter i React
-- Oppsett av en enkel React-app
-- Lagre tilstand i appen
-- Flere konsepter i React/JavaScript
-
-</Layout>
-
----
-
-<Layout>
-
-## Andre del
-
-- Bruk av pakker i React/NPM
-- Bruk av komponentrammeverk
-- Visualisering med grafer
-- Routing og undersider
-- SinglePageApplication
-
-</Layout>
-
----
-
-<Layout>
-
-## Tredje del
-
-- Deploye nettside
-- Eksempler på andre mulige prosjekter
-- Hvordan komme i gang med react
-
-</Layout>
+# Første del
 
 ---
 
@@ -178,7 +136,7 @@ subtitle="Her åpner og lukker vi <html> som alltid er den ytterste blokken">
 
 <div style={{padding: "2em"}}>
 
-React er er JavaScript bibliotek for å lage brukergrensesnitt, hovedsakelig med HTML.
+React er et JavaScript bibliotek for å lage brukergrensesnitt, hovedsakelig med HTML.
 
 Med React skriver vi ikke vanlig JavaScript, men et
 superset som heter **JSX**. Dette ser ut som en blanding
@@ -357,9 +315,9 @@ const App = () => {
 
 ---
 
-<CodeSurferColumns>
+<CodeSurferColumns sizes={[2,1]}>
 
-<Step title="La oss begynne å lage en liten app som viser litt eksempler">
+<Step title="La oss begynne å lage en liten app som viser litt eksempler. Alt vi lager vises på høyre siden" subtitle="Det kommer et steg etterpå hvor dere kan hente all den koden jeg viser her så dere kan prøve dere på en oppgave">
 
 ```jsx 1:14 file=./src/App.1.1.js
 
@@ -369,7 +327,7 @@ const App = () => {
 
 </Step>
 
-<Step title="Vi må importere React for å bruke JSX, samt litt `CSS` så eksempelet blir litt fint">
+<Step title="Vi må importere React for å bruke JSX, samt en CSS fil så eksempelet blir litt fint" subtitle="Jeg skal vise frem CSS filen senere så vi kan se på hvordan den ser ut.">
 
 ```jsx 1,2 file=./src/App.1.1.js
 
@@ -379,19 +337,9 @@ const App = () => {
 
 </Step>
 
-<Step title="Så definerer vi en funksjon som retunerer JSX">
+<Step title="Vi definerer en funksjon som retunerer JSX som består av en <div>, med en <h1> inni" subtitle="Denne div'en (division) har en <h1> som hvor det står header. React vil, på samme måte som vi viste i stad gjøre dette om til JavaScript som kjører i nettleserern">
 
 ```jsx 4:12 file=./src/App.1.1.js
-
-```
-
-<AppLoader />
-
-</Step>
-
-<Step subtitle="...og dette lager komponenten vi ser på siden">
-
-```jsx file=./src/App.1.1.js
 
 ```
 
@@ -399,7 +347,7 @@ const App = () => {
 
 </Step>
 
-<Step title="Men så trenger vi noen `chats` i dette chatterommet da">
+<Step title="Dette skal være et fake chatterom, som viser hvordan en kan gå frem hvis en skal bygge noe lignende." subtitle="Så trenger vi noen `chats` i dette chatterommet da. Her kan vi se hvordan en chat kan være bygd opp">
 
 ```jsx file=./src/App.1.2.js
 
@@ -409,7 +357,7 @@ const App = () => {
 
 </Step>
 
-<Step title="også trenger vi et svar fra Ludvig">
+<Step title="Også kommer det et svar fra Ludvig.">
 
 ```jsx file=./src/App.1.3.js
 
@@ -419,7 +367,7 @@ const App = () => {
 
 </Step>
 
-<Step title="og Magnus">
+<Step title="og et svar fra Magnus">
 
 ```jsx file=./src/App.1.4.js
 
@@ -438,6 +386,66 @@ const App = () => {
 <AppLoader version="1.5" />
 
 </Step>
+
+</CodeSurferColumns>
+
+---
+
+<CodeSurferColumns>
+
+<Step title="La oss stoppe litt her, og se hvorfor det ser ut slik det ser ut!" subtitle="Her er CSS filen som vi har bruker">
+
+```jsx file=./src/App.1.5.js
+
+```
+
+```css file=./src/App_fake.css
+
+```
+
+</Step>
+
+<Step title="Så f.eks .chat" subtitle="Dette er grunnen til at chatten vår har hvit bakgrunn, og har runde kanter">
+
+```jsx 6 file=./src/App.1.5.js
+
+```
+
+```css 1:6 file=./src/App_fake.css
+
+```
+
+</Step>
+
+<Step title="Og meldingene våre er nedover" subtitle="Vi sier at alt innholdet i en .message div skal være kolonnebasert">
+
+```jsx 10[23:30],15[23:30],20[23:30],25[23:30] file=./src/App.1.5.js
+
+```
+
+```css 7:11 file=./src/App_fake.css
+
+```
+
+</Step>
+
+<Step title="Her kan vi også se hvorfor noen av meldingene er til høyre+blå, og hvorfor noen er til venstre+grå" subtitle="Vi bruker altså to ulike CSS klasser for å bestemme hvordan det skal se ut">
+
+```jsx 10[30:43],25[30:43] file=./src/App.1.5.js
+
+```
+
+```css 12:14 file=./src/App_fake.css
+
+```
+
+</Step>
+
+</CodeSurferColumns>
+
+---
+
+<CodeSurferColumns sizes={[2,1]}>
 
 <Step title="Men hva synes vi egentlig om dette?" subtitle="Er dette god og gjennbrukbar kode?">
 
@@ -529,7 +537,7 @@ const App = () => {
 
 </Step>
 
-<Step title="Sender inn teksten til komponenten litt som en funksjon">
+<Step title="Sender inn teksten til komponenten litt som en funksjon" subtitle="Her kan vi trekke python def Header(props): anologien">
 
 ```jsx file=./src/App.1.10.js
 
@@ -897,13 +905,23 @@ const komponenter = liste.map((element) => {
 
 </Step>
 
-<Step title="Dette gjør det mye lettere å lage dynamiske nettsider som har varierende innhold">
+<Step title="Dette gjør det mye lettere å lage dynamiske nettsider som har varierende innhold" subtitle="Noen spørsmål til hvordan dette funker? Jeg vet dette steget ofte er litt vanskelig å wrappe hodet rundt!">
 
 ```jsx file=./src/App.1.51.js
 
 ```
 
 <AppLoader version="1.51" />
+
+</Step>
+
+<Step title="Kjapp annen måte en kan gjøre det på">
+
+```jsx file=./src/App.1.52.js
+
+```
+
+<AppLoader version="1.52" />
 
 </Step>
 

@@ -16,8 +16,8 @@ const App = () => {
     "Friends", 
   ];
 
-  const headers = list.map((e) => {
-    return <Header text={e} />
+  const headers = list.map((elem) => {
+    return <Header text={elem} />
   })
 
   return (

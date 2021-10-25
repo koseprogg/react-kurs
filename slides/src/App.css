@@ -5,12 +5,6 @@
   border-radius: 30px;
 }
 
-.messages {
-  max-height: 500px;
-  overflow-y: scroll;
-  scroll-start: ;
-}
-
 .message {
   display: flex;
   flex-direction: column;
@@ -57,6 +51,13 @@
 }
 
 /* TEMP */
+
+.messages {
+  max-height: 500px;
+  overflow-y: scroll;
+  scroll-start: ;
+}
+
 .header {
   color: black;
   font-size: 30px;
