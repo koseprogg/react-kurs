@@ -1,6 +1,6 @@
 # Nybegynnerkurs i React 25.10.2021
 
-[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/koseprogg/react-kurs)
+[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/koseprogg/react-kurs/tree/start)
 
 # Oppsett:
 
