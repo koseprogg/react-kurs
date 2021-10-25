@@ -4,6 +4,7 @@ import data from "./api";
 import "./App.css";
 import Button from "@material-ui/core/Button";
 import TextField from "@material-ui/core/TextField";
+import LinearProgress from "@material-ui/core/LinearProgress";
 import { useState } from "react";
 
 import DatePicker from "react-datepicker";
@@ -41,13 +42,27 @@ const Chat = () => {
     <>
       <Header text="Chatroom" />
       {renderMessages()}
-      <TextField
-        id="filled-basic"
-        label="Filled"
-        variant="filled"
-        style={{ width: "100%" }}
-        value={newMessage}
-        onChange={(event) => setNewMessage(event.target.value)}
+      <div style={{ display: "flex", marginBottom: "10px" }}>
+        <TextField
+          label="Melding"
+          variant="outlined"
+          style={{ width: "100%" }}
+          value={newMessage}
+          onChange={(event) => setNewMessage(event.target.value)}
+        />
+        <Button
+          variant="contained"
+          onClick={addNewMessage}
+          disabled={newMessage.length < 1}
+          color="primary"
+        >
+          Send
+        </Button>
+      </div>
+      <LinearProgress
+        variant="determinate"
+        value={Math.min(newMessage.length * 2, 100)}
+        style={{ marginBottom: "10px" }}
       />
       <DatePicker
         selected={startDate}
@@ -55,13 +70,6 @@ const Chat = () => {
         dateFormat="Pp"
         onChange={(date) => setStartDate(date)}
       />
-      <Button
-        variant="contained"
-        style={{ backgroundColor: "#1186fe", color: "white" }}
-        onClick={addNewMessage}
-      >
-        Send
-      </Button>
     </>
   );
 };

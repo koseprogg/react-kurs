@@ -21,7 +21,7 @@ const Stats = () => {
 
   return (
     <>
-      <Header text="Statistics" />
+      <Header text="Statistikk" />
       <p>Antall meldinger:</p>
       <VictoryChart
         // domainPadding will add space to each side of VictoryBar to
