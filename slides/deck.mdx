@@ -1026,28 +1026,85 @@ $ git reset --hard origin/step4
 
 ---
 
-<CodeSurferColumns>
+<CodeSurfer>
 
-<!-- STEP 1 -->
-
-<Step title="Fasit!">
-
-```jsx file=./src/App.3.0.js
+```jsx file=./src/App.3.0.js title="Fasit!"
 
 ```
 
-<AppLoader version="3.0" />
+```jsx 27 file=./src/App.3.1.js subtitle="Først lager vi staten vår som holder meldingene. (Her er data, som vi har brukt tidligere, start verdien vår)"
 
-</Step>
+```
 
-</CodeSurferColumns>
+```jsx 29 file=./src/App.3.2.js subtitle="Og bytter ut hva vi bruker til å lage melding komponentene våre"
 
----
+```
 
-<CodeSurfer>
+```jsx 55 file=./src/App.3.3.js subtitle="Så må vi bytte ut funksjonen som kalles når vi skriver inn noe i tekstfeltet. Vi setter denne til addMessage"
 
-```jsx file=./src/App.3.0.js title="Vi tar en bedre titt på hvordan vi går frem!"
+```
+
+```jsx subtitle="Vi tar en nærmere titt på hvordan vi skal lage addMessage."
+const addMessage = ???
+```
+
+```jsx subtitle="Det første vi vet er at dette skal være en funksjon som tar inn en streng message som parameter."
+const addMessage = (message) => {};
+```
+
+```diff subtitle="Så må vi bruke message strengen til å legge til en ny melding i staten vår. Noen som har noen ideer til hva vi må gjøre for endre melding staten vår?"
+
+```
+
+```jsx subtitle="Vi må kalle setMessageData!"
+const addMessage = (message) => {
+  setMessageData(???)
+};
+```
+
+```jsx subtitle="Også må vi lage et objekt som representerer meldingen vår, akkurat som de andre meldingene vi har fra før"
+const addMessage = (message) => {
+  setMessageData({
+    me: true,
+    timestamp: Date.now(),
+    text: message,
+    from: theName,
+  });
+};
+```
+
+```jsx subtitle="Men messages er jo et array, så staten vår må inneholde et array med de gamle meldingene, pluss den nye!"
+const addMessage = (message) => {
+  setMessageData([
+    ...messageData,
+    {
+      me: true,
+      timestamp: Date.now(),
+      text: message,
+      from: theName,
+    },
+  ]);
+};
+```
+
+```jsx 29:39 file=./src/App.3.4.js subtitle="Vi bruker den ferdige versjonen i appen vår!"
 
 ```
 
 </CodeSurfer>
+
+---
+
+<CodeSurferColumns>
+
+<Step subtitle="Når har vi meldingene i en state, og vi kan lage nye meldinger!">
+
+```jsx file=./src/App.3.10.js
+
+```
+
+<AppLoader version="3.10" />
+
+</Step>
+
+</CodeSurferColumns>

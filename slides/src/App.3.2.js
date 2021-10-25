@@ -24,9 +24,9 @@ const App = () => {
   const [name, setName] = useState(null);
   const theName = name || "unknown";
 
-  // Her må du bytte ut hva som brukes av data.
-  // Du kan regne med at data er "start verdien" vår
-  const messages = data.map((msg) => (
+  const [messageData, setMessageData] = useState(data);
+
+  const messages = messageData.map((msg) => (
     <Message
       from={msg.me ? theName : msg.from}
       timestamp={msg.timestamp}

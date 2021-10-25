@@ -8,7 +8,7 @@ const InputWithButton = (props) => {
   const [inputVal, setInputVal] = useState(null);
 
   return (
-    <div>
+    <div className="inputButton">
       <input
         placeholder={props.placeholder}
         onInput={(e) => setInputVal(e.target.value)}
@@ -24,9 +24,21 @@ const App = () => {
   const [name, setName] = useState(null);
   const theName = name || "unknown";
 
-  // Her må du bytte ut hva som brukes av data.
-  // Du kan regne med at data er "start verdien" vår
-  const messages = data.map((msg) => (
+  const [messageData, setMessageData] = useState(data);
+
+  const addMessage = (message) => {
+    setMessageData([
+      ...messageData,
+      {
+        me: true,
+        timestamp: Date.now(),
+        text: message,
+        from: theName,
+      },
+    ]);
+  };
+
+  const messages = messageData.map((msg) => (
     <Message
       from={msg.me ? theName : msg.from}
       timestamp={msg.timestamp}
@@ -38,7 +50,7 @@ const App = () => {
   return (
     <div className="chat">
       <Header text="Chatroom" />
-      {messages}
+      <div className="messages">{messages}</div>
       {!name && (
         <InputWithButton
           placeholder="name"
@@ -50,9 +62,7 @@ const App = () => {
         <InputWithButton
           placeholder="Message"
           name="Send"
-          // console.log er bare en placholder her,
-          // du må selv finne ut hva onSet skal settes til
-          onSet={(v) => console.log(v)}
+          onSet={addMessage}
         />
       )}
     </div>

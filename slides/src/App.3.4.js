@@ -24,9 +24,21 @@ const App = () => {
   const [name, setName] = useState(null);
   const theName = name || "unknown";
 
-  // Her må du bytte ut hva som brukes av data.
-  // Du kan regne med at data er "start verdien" vår
-  const messages = data.map((msg) => (
+  const [messageData, setMessageData] = useState(data);
+
+  const addMessage = (message) => {
+    setMessageData([
+      ...messageData,
+      {
+        me: true,
+        timestamp: Date.now(),
+        text: message,
+        from: theName,
+      },
+    ]);
+  };
+
+  const messages = messageData.map((msg) => (
     <Message
       from={msg.me ? theName : msg.from}
       timestamp={msg.timestamp}
@@ -50,9 +62,7 @@ const App = () => {
         <InputWithButton
           placeholder="Message"
           name="Send"
-          // console.log er bare en placholder her,
-          // du må selv finne ut hva onSet skal settes til
-          onSet={(v) => console.log(v)}
+          onSet={addMessage}
         />
       )}
     </div>
