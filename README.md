@@ -4,6 +4,7 @@
 
 # Oppsett:
 
+- Naviger til branch `start`
 - Kjør `npm i`
 - Kjør `npm start`
 
