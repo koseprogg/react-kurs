@@ -593,7 +593,7 @@ const App = () => {
 
 ## Oppgavetid! (10 min)
 
-Lag en Message komponent vi kan bruke flere ganger, sånn at vi ikke gjenntar oss så mange ganger?
+Lag en Message komponent vi kan bruke flere ganger, sånn at vi ikke må skrive ut hele komponenten hver gang?
 
 Start oppgaven med:
 
@@ -929,6 +929,32 @@ const komponenter = liste.map((element) => {
 
 ---
 
+<CodeSurferColumns>
+
+<Step title="Så det vi lærte nå, og hvordan vi kan bruke loops/maps for skal vi prøve å integrere dette i appen vår" subtitle="Selv om vi nå har klart å lage <Message /> komponenter, så er det forsatt mye duplikat kode.">
+
+```jsx file=./src/App.1.22.js
+
+```
+
+<AppLoader version="1.22" />
+
+</Step>
+
+<Step title="Så denne delen her, hvordan kan vi gjøre dette litt bedre">
+
+```jsx 10:32 file=./src/App.1.22.js
+
+```
+
+<AppLoader version="1.22" />
+
+</Step>
+
+</CodeSurferColumns>
+
+---
+
 <Layout>
 
 <div style={{textAlign: 'left', fontSize:"0.8em"}}>
@@ -953,6 +979,62 @@ import data from "./api";
 </div>
 
 </Layout>
+
+---
+
+<CodeSurferColumns>
+
+<Step title="Skal vi se på et mulig løsnignsforslag da!" subtitle="">
+
+```jsx file=./src/App.1.22.js
+
+```
+
+<AppLoader version="1.22" />
+
+</Step>
+
+<Step title="Det er jo igjen denne delen som er problemet">
+
+```jsx 10:32 file=./src/App.1.22.js
+
+```
+
+<AppLoader version="1.22" />
+
+</Step>
+
+<Step title="Det første vi gjør er som jeg viste i stad at vi henter data fra dette fake API-et. Så da kan vi begynne å lage en liten .map her oppe">
+
+```jsx file=./src/App.1.23.js
+
+```
+
+<AppLoader version="1.24" />
+
+</Step>
+
+<Step title="Og så kan vi bruke den slik">
+
+```jsx file=./src/App.1.24.js
+
+```
+
+<AppLoader version="1.24" />
+
+</Step>
+
+<Step title="Noen spørsmål rundt dette?">
+
+```jsx file=./src/App.1.24.js
+
+```
+
+<AppLoader version="1.24" />
+
+</Step>
+
+</CodeSurferColumns>
 
 ---
 
